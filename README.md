@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <img src="https://raw.githubusercontent.com/StylexTV/UltimateHeads/master/showcase/socials/cover.png">
+  <img src="https://raw.githubusercontent.com/StylexTV/UltimateHeads/main/showcase/socials/cover.png">
   <br>
 </h1>
 
