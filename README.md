@@ -29,7 +29,7 @@ UltimateHeads is a spigot plugin that allows you to access over 21,000 artistic 
 > The spigotmc page, including a download link, can be found [here](https://www.spigotmc.org/resources/g-signs-a-unique-map-signs-plugin-for-lobbies.85017/).
 
 ## How does it work?
-The UltimateHeads plugin is constantly connected to an external database containing all 21 thousand heads. The heads are regularly retrieved from this database and the plugin categorizes them. The plugin also combines these global heads with local heads (e.g. player heads) when the heads are displayed. When it comes to searching the heads, UltimateHeads uses the fast and optimized 'TimSort' to display results in less than a second.
+The UltimateHeads plugin is constantly connected to an external database containing all 21 thousand heads. The heads are regularly retrieved from this database and the plugin categorizes them. The plugin also combines these global heads with local heads (e.g. player heads) when the heads are displayed. When it comes to searching the heads, UltimateHeads uses the fast and optimized `TimSort` to display results in less than a second.
 
 ## Project Layout
 Here you can see the current structure of the project.
