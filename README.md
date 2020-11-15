@@ -10,8 +10,8 @@
   <a href="https://GitHub.com/StylexTV/UltimateHeads/stargazers/">
     <img alt="stars" src="https://img.shields.io/github/stars/StylexTV/UltimateHeads.svg?color=ffdd00"/>
   </a>
-  <a href="https://www.codacy.com/manual/noluck942/GSigns?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=StylexTV/GSigns&amp;utm_campaign=Badge_Grade">
-    <img alt="Codacy Badge" src="https://app.codacy.com/project/badge/Grade/a33dbb19ff17460d896a7864fececab6"/>
+  <a href="https://www.codacy.com/gh/StylexTV/UltimateHeads/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=StylexTV/UltimateHeads&amp;utm_campaign=Badge_Grade">
+    <img alt="Codacy Badge" src="https://app.codacy.com/project/badge/Grade/5bb1a38f161b4298ad8fd6fa853b7403"/>
   </a>
   <a>
     <img alt="Code size" src="https://img.shields.io/github/languages/code-size/StylexTV/UltimateHeads.svg"/>
