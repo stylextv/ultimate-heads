@@ -1,0 +1,129 @@
+general:
+  word:
+    everyone: jedem
+    required: Erforderlich
+    optional: Optional
+    page: Seite
+    favorites: Favoriten
+    query: Suche
+    heads: %0% Köpfe
+    head: %0% Kopf
+command:
+  use:
+    general: Nutzen Sie §c%0%§7.
+    help: Nutzen Sie §e/uh help§7, um eine Liste von Befehlen zu erhalten.
+  error:
+    headnotfound: Konnte keinen Kopf mit ID §c'%0%'§7 finden.
+    noplayer: Dieser Befehl ist nur für §cSpieler§r bestimmt.
+    novalidhead: Sie §chalten§7 keinen gültigen Kopf.
+    noperm: Sie haben nicht die richtige §cErlaubnis§7, dies zu tun.
+  hover:
+    copy: §7Klicken Sie hier, um dies in die Zwischenablage zu §ekopieren§7.
+    open: §7Klicken Sie hier, um diese URL zu §eöffnen§7.
+  give:
+    receive: Sie haben einen Kopf namens §6%0%§7 erhalten.
+    given: Sie haben §6%0%§7 einen Kopf namens §6%1%§7 gegeben.
+  add:
+    added: Der Kopf mit dem Namen §6%0%§7 wurde §ahinzugefügt§7.
+  help:
+    needsperm: §e*§7: Benötigt zusätzliche Erlaubnis
+    line1: /gs gui §8> §7Öffne Menü§e*
+    line2: /gs search §8> §7Suche nach Kopf§e*
+    line3: /gs give (player/all) (global/local)
+    line4: (head_id) §8> §7Vergebe Kopf§e*
+    line5: /gs base64 §8> §7Base64-Wert abrufen§e*
+    line6: /gs url §8> §7Textur-URL abrufen§e*
+    line7: /gs add (url) (name) (category) §8>
+    line8: §7Kopf hinzufügen§e*
+    line9: /gs update §8> §7Plugin aktualisieren§e*
+    line10: /gs help §8> §7Zeige Hilfe
+    line11: /gs info §8> §7Zeige Plugin-Informationen
+  info:
+    title:                   Informationen
+    line1: §7§oSie verwenden das open-source Köpfe-
+    line2: §7§o Plugin §e%0%§7§o!
+    line3: §8- §7Entwickelt von §8> §b%0%
+    line4: §8- §7Installierte Version §8> §b%0%
+config:
+  range: Bereich: %0% - %1%
+  options: Optionen: %0%
+  type: Art: %0%
+  currentvalue: Aktueller Wert: §b%0%
+  name:
+    language: Sprache
+  desc:
+    language1: Die Sprache, in der das
+    language2: Plugin Nachrichten und
+    language3: andere Texte anzeigt.
+prompt:
+  refine: Geben Sie einen §eSuchbegriff§7 ein, um Ihre Suche zu verfeinern.
+  search: Geben Sie Ihren §eSuchbegriff§7 ein.
+  canceled: Suche §cabgebrochen§7.
+gui:
+  title:
+    config: Konfiguration
+    settings: Einstellungen
+  category:
+    lore1: %0%§7 Köpfe
+    lore2: %0%§7 Kopf
+  head:
+    lore:
+      pack: Paket: %0%
+      staff: Staff-Favorit
+      delete: Mittel-Klick um zu Löschen
+  item:
+    arrow:
+      name: §e§lSeite %0%
+    left:
+      desc1: Klicken Sie hier, um %0% Seite nach links zu gehen.
+      desc2: Klicken Sie hier, um %0% Seiten nach links zu gehen.
+    right:
+      desc1: Klicken Sie hier, um %0% Seite nach rechts zu gehen.
+      desc2: Klicken Sie hier, um %0% Seiten nach rechts zu gehen.
+    back:
+      name: §e§lZurück
+      desc: Klicken Sie hier, um zum vorherigen Menü zu gelangen.
+    pageback:
+      name: §e§lZurück zu den Kategorien
+      desc: Klicken Sie hier, um zu den Kategorien zurückzukehren.
+    settings:
+      name: §c§lEinstellungen
+      desc: Klicken Sie hier, um die Einstellungen zu öffnen.
+    config:
+      name: §5§lKonfiguration
+      desc: Klicken Sie hier, um die Konfiguration im Spiel zu bearbeiten.
+    update:
+      name: §b§lPlugin aktualisieren
+      desc: Klicken Sie hier, um das Plugin automatisch auf die neueste Version zu aktualisieren, ohne das Spiel zu verlassen.
+    restoreconfig:
+      name: §b§lStandard wiederherstellen
+      desc: Klicken Sie hier, um die Standardkonfiguration wiederherzustellen.
+    searchnew:
+      name: §e§lNeue Suche
+      desc: Klicken Sie hier, um eine neue Suche zu starten.
+    searchrefine:
+      name: §e§lSuche verfeinern
+      desc: Klicken Sie hier, um Ihre aktuelle Suche zu verfeinern.
+    favorites:
+      name: §6§lFavoriten
+      desc: Klicken Sie mit der Umschalttaste auf einen beliebigen Kopf, um ihn als Favorit zu speichern.
+    option:
+      left:
+        name: §e§lVorherige
+        desc: Klicken Sie hier, um die vorherige Option auszuwählen.
+      right:
+        name: §e§lNächste
+        desc: Klicken Sie hier, um die nächste Option auszuwählen.
+autoupdate:
+  begin: Prüfe auf neue Updates...
+  result:
+    noupdate: Das Plugin ist auf dem neuesten Stand! Sie verwenden die §aneueste§7 Version von §6%0%§7.
+    found1: Es wurde ein neues Update §agefunden§7. Version: %0%
+    found2: Das Update wird installiert, wenn der Server
+    found3: §egeschlossen§7 oder §eneu gestartet§7 wird.
+  error:
+    noconnection: Konnte keine Verbindung mit dem Server herstellen. Stellen Sie sicher, dass Sie mit dem §cInternet§7 verbunden sind.
+    unknown: Bei der Suche nach neuen Updates ist eine §cFehler§7 aufgetreten!
+    alreadyfound1: Eine neue Aktualisierung wurde §ebereits§7 gefunden. Version: %0%
+    alreadyfound2: Das Update wird installiert, wenn der Server §egeschlossen§7 oder §eneu gestartet§7 wird.
+    alreadysearching: §eJemand anderes§7 sucht bereits nach einem Update.

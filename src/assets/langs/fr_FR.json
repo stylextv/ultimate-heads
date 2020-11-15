@@ -1,0 +1,129 @@
+general:
+  word:
+    everyone: everyone
+    required: Required
+    optional: Optional
+    page: Page
+    favorites: Favorites
+    query: Query
+    heads: %0% heads
+    head: %0% head
+command:
+  use:
+    general: Use §c%0%§7.
+    help: Use §e/uh help§7 to get a list of commands.
+  error:
+    headnotfound: Could not find a head with ID §c'%0%'§7.
+    noplayer: This command is for §cplayers§r only.
+    novalidhead: You are not §cholding§7 a valid head.
+    noperm: You don't have the right §cpermission§7 to do this.
+  hover:
+    copy: §7Click here to §ecopy§7 this to the clipboard.
+    open: §7Click here to §eopen§7 this URL.
+  give:
+    receive: You have been given a head named §6%0%§7.
+    given: You have given §6%0%§7 a head named §6%1%§7.
+  add:
+    added: The head named §6%0%§7 has been §aadded§7.
+  help:
+    needsperm: §e*§7: Needs extra permission to be executed
+    line1: /gs gui §8> §7Open gui§e*
+    line2: /gs search §8> §7Search for head§e*
+    line3: /gs give (player/all) (global/local)
+    line4: (head_id) §8> §7Give head§e*
+    line5: /gs base64 §8> §7Get base64 value§e*
+    line6: /gs url §8> §7Get texture url§e*
+    line7: /gs add (url) (name) (category) §8>
+    line8: §7Add head§e*
+    line9: /gs update §8> §7Update plugin§e*
+    line10: /gs help §8> §7Show help
+    line11: /gs info §8> §7Show plugin information
+  info:
+    title:                    Information
+    line1: §7§oYou are using the open source heads
+    line2: §7§o plugin §e%0%§7§o!
+    line3: §8- §7Developed by §8> §b%0%
+    line4: §8- §7Installed version §8> §b%0%
+config:
+  range: range: %0% - %1%
+  options: options: %0%
+  type: type: %0%
+  currentvalue: Current value: §b%0%
+  name:
+    language: Language
+  desc:
+    language1: The language in which the
+    language2: plugin will display
+    language3: messages and other texts.
+prompt:
+  refine: Enter a §esearch term§7 to refine your search.
+  search: Enter your §esearch term§7.
+  canceled: Search §ccanceled§7.
+gui:
+  title:
+    config: Config
+    settings: Settings
+  category:
+    lore1: %0%§7 heads
+    lore2: %0%§7 head
+  head:
+    lore:
+      pack: Pack: %0%
+      staff: Staff Favorite
+      delete: Middle-click to delete
+  item:
+    arrow:
+      name: §e§lPage %0%
+    left:
+      desc1: Click here to go %0% page to the left.
+      desc2: Click here to go %0% pages to the left.
+    right:
+      desc1: Click here to go %0% page to the right.
+      desc2: Click here to go %0% pages to the right.
+    back:
+      name: §e§lBack
+      desc: Click here to go to the previous menu.
+    pageback:
+      name: §e§lBack to categories
+      desc: Click here to go back to the categories.
+    settings:
+      name: §c§lSettings
+      desc: Click here to open the settings.
+    config:
+      name: §5§lConfig
+      desc: Click here to edit the config ingame.
+    update:
+      name: §b§lUpdate plugin
+      desc: Click here to automatically update the plugin to the latest version without leaving the game.
+    restoreconfig:
+      name: §b§lRestore default
+      desc: Click here to restore the default config.
+    searchnew:
+      name: §e§lNew search
+      desc: Click here to start a new search.
+    searchrefine:
+      name: §e§lRefine search
+      desc: Click here to refine your current search.
+    favorites:
+      name: §6§lFavorites
+      desc: Shift click any head to save it as a favorite.
+    option:
+      left:
+        name: §e§lPrevious
+        desc: Click here to select the previous option.
+      right:
+        name: §e§lNext
+        desc: Click here to select the next option.
+autoupdate:
+  begin: Checking for new updates...
+  result:
+    noupdate: §7The plugin is up to date! You are running the §alatest§7 version of §6%0%§7.
+    found1: §7A new update has been §afound§7. Version: %0%
+    found2: §7The update is installed when the server is
+    found3: §eclosed §7or §erestarted§7.
+  error:
+    noconnection: Couldn't connect to the server. Make sure you are connected to the §cinternet§7.
+    unknown: An §cerror§7 occurred while checking for new updates!
+    alreadyfound1: A new update has §ealready§7 been found. Version: %0%
+    alreadyfound2: The update is installed when the server is §eclosed §7or §erestarted§7.
+    alreadysearching: §eSomeone else§7 is already checking for an update.

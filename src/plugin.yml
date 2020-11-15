@@ -1,0 +1,10 @@
+name: UltimateHeads
+version: 1.0
+author: StylexTV
+main: de.stylextv.ultimateheads.main.Main
+api-version: 1.13
+
+commands:
+    uh:
+    heads:
+    ultimateheads:
