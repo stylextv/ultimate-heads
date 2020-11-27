@@ -3,6 +3,7 @@ package de.stylextv.ultimateheads.lang;
 import de.stylextv.ultimateheads.config.ConfigManager;
 import de.stylextv.ultimateheads.gui.GuiManager;
 import de.stylextv.ultimateheads.util.ItemUtil;
+import de.stylextv.ultimateheads.util.MathUtil;
 
 public class LanguageManager {
 	
@@ -25,6 +26,7 @@ public class LanguageManager {
 		if(!inPluginRefresh) {
 			inPluginRefresh = true;
 			
+			MathUtil.createLocale();
 			ItemUtil.create();
 			GuiManager.updateTranslations();
 			

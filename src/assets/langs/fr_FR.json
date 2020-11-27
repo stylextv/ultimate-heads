@@ -1,129 +1,129 @@
 general:
   word:
-    everyone: everyone
-    required: Required
-    optional: Optional
+    everyone: tout le monde
+    required: Obligatoire
+    optional: Facultatif
     page: Page
-    favorites: Favorites
-    query: Query
-    heads: %0% heads
-    head: %0% head
+    favorites: Favoris
+    query: Requête
+    heads: %0% têtes
+    head: %0% tête
 command:
   use:
-    general: Use §c%0%§7.
-    help: Use §e/uh help§7 to get a list of commands.
+    general: Utiliser §c%0%§7.
+    help: Utilisez §e/uh help§7 pour obtenir une liste de commandes.
   error:
-    headnotfound: Could not find a head with ID §c'%0%'§7.
-    noplayer: This command is for §cplayers§r only.
-    novalidhead: You are not §cholding§7 a valid head.
-    noperm: You don't have the right §cpermission§7 to do this.
+    headnotfound: Impossible de trouver une tête avec ID §c'%0%'§7.
+    noplayer: Cette commande est réservée aux §cjoueurs§r.
+    novalidhead: Vous ne §ctenez§7 pas une tête valable.
+    noperm: Vous n'avez pas la bonne §cautorisation§7 pour le faire.
   hover:
-    copy: §7Click here to §ecopy§7 this to the clipboard.
-    open: §7Click here to §eopen§7 this URL.
+    copy: §7Cliquez ici pour §ecopier§7 ceci dans le presse-papiers.
+    open: §7Cliquez ici pour §eouvrir§7 cette URL.
   give:
-    receive: You have been given a head named §6%0%§7.
-    given: You have given §6%0%§7 a head named §6%1%§7.
+    receive: On vous a donné une tête nommée §9%0%§7.
+    given: Vous avez donné à §6%0%§7 une tête nommée §9%1%§7.
   add:
-    added: The head named §6%0%§7 has been §aadded§7.
+    added: La tête nommée §9%0%§7 a été §aajoutée§7.
   help:
-    needsperm: §e*§7: Needs extra permission to be executed
-    line1: /gs gui §8> §7Open gui§e*
-    line2: /gs search §8> §7Search for head§e*
+    needsperm: §e*§7: Nécessite une autorisation
+    line1: /gs gui §8> §7Menu ouvert§e*
+    line2: /gs search §8> §7Recherche de tête§e*
     line3: /gs give (player/all) (global/local)
-    line4: (head_id) §8> §7Give head§e*
-    line5: /gs base64 §8> §7Get base64 value§e*
-    line6: /gs url §8> §7Get texture url§e*
+    line4: (head_id) §8> §7Donner une tête§e*
+    line5: /gs base64 §8> §7Obtenir la valeur base64§e*
+    line6: /gs url §8> §7Obtenir l'url de texture§e*
     line7: /gs add (url) (name) (category) §8>
-    line8: §7Add head§e*
-    line9: /gs update §8> §7Update plugin§e*
-    line10: /gs help §8> §7Show help
-    line11: /gs info §8> §7Show plugin information
+    line8: §7Ajout d'une tête§e*
+    line9: /gs update §8> §7Mise à jour du plugin§e*
+    line10: /gs help §8> §7Montrer de l'aide
+    line11: /gs info §8> §7Informations sur les plugins
   info:
-    title:                    Information
-    line1: §7§oYou are using the open source heads
-    line2: §7§o plugin §e%0%§7§o!
-    line3: §8- §7Developed by §8> §b%0%
-    line4: §8- §7Installed version §8> §b%0%
+    title:                   Informations
+    line1: §7§oVous utilisez le plugin de têtes open
+    line2: §7§o source §e%0%§7§o!
+    line3: §8- §7Développé par §8> §b%0%
+    line4: §8- §7Version installée §8> §b%0%
 config:
-  range: range: %0% - %1%
+  range: gamme: %0% - %1%
   options: options: %0%
   type: type: %0%
-  currentvalue: Current value: §b%0%
+  currentvalue: Valeur actuelle: §b%0%
   name:
-    language: Language
+    language: Langue
   desc:
-    language1: The language in which the
-    language2: plugin will display
-    language3: messages and other texts.
+    language1: La langue dans laquelle le
+    language2: plugin affichera les
+    language3: messages et autres textes.
 prompt:
-  refine: Enter a §esearch term§7 to refine your search.
-  search: Enter your §esearch term§7.
-  canceled: Search §ccanceled§7.
+  refine: Entrez un §eterme de recherche§7 pour affiner votre recherche.
+  search: Entrez votre §eterme de recherche§7.
+  canceled: Recherche §cannulée§7.
 gui:
   title:
     config: Config
-    settings: Settings
+    settings: Paramètres
   category:
-    lore1: %0%§7 heads
-    lore2: %0%§7 head
+    lore1: %0%§7 têtes
+    lore2: %0%§7 tête
   head:
     lore:
       pack: Pack: %0%
-      staff: Staff Favorite
-      delete: Middle-click to delete
+      staff: Favoris du Staff
+      delete: Milieu-clic pour supprimer
   item:
     arrow:
       name: §e§lPage %0%
     left:
-      desc1: Click here to go %0% page to the left.
-      desc2: Click here to go %0% pages to the left.
+      desc1: Cliquez ici pour aller %0% page à gauche.
+      desc2: Cliquez ici pour aller %0% pages à gauche.
     right:
-      desc1: Click here to go %0% page to the right.
-      desc2: Click here to go %0% pages to the right.
+      desc1: Cliquez ici pour aller %0% page à droite.
+      desc2: Cliquez ici pour aller %0% pages à droite.
     back:
-      name: §e§lBack
-      desc: Click here to go to the previous menu.
+      name: §e§lRetour
+      desc: Cliquez ici pour aller au menu précédent.
     pageback:
-      name: §e§lBack to categories
-      desc: Click here to go back to the categories.
+      name: §e§lRetour aux catégories
+      desc: Cliquez ici pour revenir aux catégories.
     settings:
-      name: §c§lSettings
-      desc: Click here to open the settings.
+      name: §c§lParamètres
+      desc: Cliquez ici pour ouvrir les paramètres.
     config:
       name: §5§lConfig
-      desc: Click here to edit the config ingame.
+      desc: Cliquez ici pour modifier la configuration dans le jeu.
     update:
-      name: §b§lUpdate plugin
-      desc: Click here to automatically update the plugin to the latest version without leaving the game.
+      name: §b§lMise à jour du plugin
+      desc: Cliquez ici pour mettre automatiquement à jour le plugin à la dernière version sans quitter le jeu.
     restoreconfig:
-      name: §b§lRestore default
-      desc: Click here to restore the default config.
+      name: §b§lRétablissement de la valeur par défaut
+      desc: Cliquez ici pour restaurer la configuration par défaut.
     searchnew:
-      name: §e§lNew search
-      desc: Click here to start a new search.
+      name: §e§lNouvelle recherche
+      desc: Cliquez ici pour lancer une nouvelle recherche.
     searchrefine:
-      name: §e§lRefine search
-      desc: Click here to refine your current search.
+      name: §e§lAffiner la recherche
+      desc: Cliquez ici pour affiner votre recherche actuelle.
     favorites:
-      name: §6§lFavorites
-      desc: Shift click any head to save it as a favorite.
+      name: §6§lFavoris
+      desc: Utilisez la touche Maj pour cliquer sur une tête afin de l'enregistrer comme favori.
     option:
       left:
-        name: §e§lPrevious
-        desc: Click here to select the previous option.
+        name: §e§lPrécédent
+        desc: Cliquez ici pour sélectionner l'option précédente.
       right:
-        name: §e§lNext
-        desc: Click here to select the next option.
+        name: §e§lSuivant
+        desc: Cliquez ici pour sélectionner l'option suivante.
 autoupdate:
-  begin: Checking for new updates...
+  begin: Vérifier les nouvelles mises à jour...
   result:
-    noupdate: §7The plugin is up to date! You are running the §alatest§7 version of §6%0%§7.
-    found1: §7A new update has been §afound§7. Version: %0%
-    found2: §7The update is installed when the server is
-    found3: §eclosed §7or §erestarted§7.
+    noupdate: Le plugin est à jour! Vous utilisez la §adernière§7 version de %0%.
+    found1: Une nouvelle mise à jour a été §atrouvée§7. Version: %0%
+    found2: La mise à jour est installée lorsque le serveur est
+    found3: §efermé§7 ou §eredémarré§7.
   error:
-    noconnection: Couldn't connect to the server. Make sure you are connected to the §cinternet§7.
-    unknown: An §cerror§7 occurred while checking for new updates!
-    alreadyfound1: A new update has §ealready§7 been found. Version: %0%
-    alreadyfound2: The update is installed when the server is §eclosed §7or §erestarted§7.
-    alreadysearching: §eSomeone else§7 is already checking for an update.
+    noconnection: Impossible de se connecter au serveur. Vérifiez que vous êtes bien connecté à §cInternet§7.
+    unknown: Une §cexception§7 s'est produite lors de la vérification des nouvelles mises à jour!
+    alreadyfound1: Une nouvelle mise à jour a §edéjà§7 été trouvée. Version: %0%
+    alreadyfound2: La mise à jour est installée lorsque le serveur est §efermé§7 ou §eredémarré§7.
+    alreadysearching: §eUne autre personne§7 est déjà en train de vérifier une mise à jour.

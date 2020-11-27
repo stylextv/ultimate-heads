@@ -50,7 +50,6 @@ public class DataManager {
 					String category = config.getString("data.local."+s+".category");
 					HeadManager.addLocalHead(new Head(id, name, url, null, false, true, HeadManager.getOrAddCategory(category)));
 				}
-				HeadManager.sortLocalHeadIds();
 			}
 			
 		} catch (InvalidConfigurationException | IOException ex) {

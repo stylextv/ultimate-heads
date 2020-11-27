@@ -37,6 +37,8 @@ public class HeadManager {
 	private static ArrayList<Head> localHeads = new ArrayList<Head>();
 	private static ArrayList<Category> categories = new ArrayList<Category>();
 	
+	private static String latestPackName;
+	
 	public static void loadHeads() {
 		if(HEADS_FILE.exists()) {
 			
@@ -152,7 +154,13 @@ public class HeadManager {
 	}
 	public static int getNextLocalId() {
 		if(localHeads.isEmpty()) return 1;
-		else return localHeads.get(localHeads.size()-1).getId()+1;
+		else {
+			int max=0;
+			for(Head h:localHeads) {
+				if(max==0 || h.getId()>max) max=h.getId();
+			}
+			return max+1;
+		}
 	}
 	
 	public static List<Head> getFavorites(Player p) {
@@ -164,16 +172,25 @@ public class HeadManager {
 		return heads.stream().sorted(Comparator.comparing(head -> !favorites.contains(head.getUrl()))).collect(Collectors.toList());
 	}
 	public static List<Head> getHeadsOfLatestPack() {
-		String latestPackName = null;
+		String latestPackName = getNameOfLatestPack();
+		if(latestPackName!=null) {
+			Stream<Head> stream = heads.stream().filter(h -> latestPackName.equals(h.getPack()));
+			stream = stream.sorted((Head h1, Head h2) -> h1.getName().toLowerCase().compareTo(h2.getName().toLowerCase()));
+			stream = stream.sorted((Head h1, Head h2) -> ((Boolean)h2.isStaffPicked()).compareTo(h1.isStaffPicked()));
+			return stream.collect(Collectors.toList());
+		}
+		return null;
+	}
+	public static String getNameOfLatestPack() {
+		if(latestPackName != null) return latestPackName;
+		
 		for(int i=heads.size()-1; i>=0; i--) {
 			Head h = heads.get(i);
 			if(h.getPack() != null) {
 				latestPackName = h.getPack();
-				break;
+				return latestPackName;
 			}
 		}
-		String latestPackNameF = latestPackName;
-		if(latestPackName!=null) return heads.stream().filter(h -> latestPackNameF.equals(h.getPack())).collect(Collectors.toList());
 		return null;
 	}
 	public static List<Head> getHeadsByCategory(Category c) {
@@ -181,15 +198,13 @@ public class HeadManager {
 	}
 	public static List<Head> getHeadsByQuery(String query) {
 		String queryLower = query.toLowerCase();
-		List<Head> results = getAllHeads().stream().filter(h -> h.getName().toLowerCase().contains(queryLower)).collect(Collectors.toList());
-		if(results.isEmpty()) {
-            for(Category c : categories) {
-                if(c.getName().equalsIgnoreCase(query)) {
-                    return getHeadsByCategory(c);
-                }
-            }
-		}
+		List<Head> results = getAllHeads().stream().filter(h -> doesHeadMatch(h, queryLower)).collect(Collectors.toList());
 		return results;
+	}
+	public static boolean doesHeadMatch(Head h, String queryLower) {
+		return h.getName().toLowerCase().contains(queryLower)
+				|| h.getCategory().getName().toLowerCase().contains(queryLower)
+				|| (h.getPack() != null && h.getPack().toLowerCase().contains(queryLower));
 	}
 	public static Head getHeadById(int id, boolean local) {
 		Optional<Head> optional;
@@ -221,11 +236,6 @@ public class HeadManager {
 		int id=removeLocalHead(name);
 		if(id==-1) id=HeadManager.getNextLocalId();
 		addLocalHead(new Head(id, name, ItemUtil.headValueToUrl(ItemUtil.getHeadValue(p), true), null, false, true, HeadManager.getOrAddCategory("Player Heads")));
-	}
-	public static void sortLocalHeadIds() {
-		List<Head> results = localHeads.stream().sorted((Head h1, Head h2) -> ((Integer)h1.getId()).compareTo(h2.getId())).collect(Collectors.toList());
-		localHeads.clear();
-		localHeads.addAll(results);
 	}
 	
 	public static ArrayList<Category> getCategories() {

@@ -53,7 +53,7 @@ public class CommandHandler {
 			if(hasPermUpdate || hasPermGui || hasPermSearch || hasPermGive || hasPermBase64 || hasPermUrl || hasPermAdd) {
 				if(args.length == 0) {
 					if(hasPermGui) {
-						AsyncUtil.runAsync(() -> GuiManager.openMainMenu(p));
+						AsyncUtil.runAsync(() -> GuiManager.openMainMenu(p, 0));
 					} else sendHelpSuggestion(p);
 				} else {
 					
@@ -71,13 +71,13 @@ public class CommandHandler {
 					} else if(subCommand.equalsIgnoreCase("gui")) {
 						if(hasPermGui) {
 							if(args.length==1) {
-								AsyncUtil.runAsync(() -> GuiManager.openMainMenu(p));
+								AsyncUtil.runAsync(() -> GuiManager.openMainMenu(p, 0));
 							} else p.sendMessage(Variables.PREFIX+LanguageManager.parseMsg("command.use.general", "/uh gui"));
 						} else sendNoPermission(p);
 					} else if(subCommand.equalsIgnoreCase("search")) {
 						if(hasPermGui && hasPermSearch) {
 							if(args.length==1) {
-								HeadListMenu.startNewSearch(p);
+								HeadListMenu.startNewSearch(p, 0);
 							} else p.sendMessage(Variables.PREFIX+LanguageManager.parseMsg("command.use.general", "/uh search"));
 						} else sendNoPermission(p);
 					} else if(subCommand.equalsIgnoreCase("give")) {
@@ -158,7 +158,7 @@ public class CommandHandler {
 								Category c = HeadManager.getOrAddCategory(args[3]);
 								if(PermissionUtil.hasCategoryPermission(p, c)) {
 									HeadManager.addLocalHead(new Head(HeadManager.getNextLocalId(), name, url, null, false, true, c));
-									p.sendMessage(Variables.PREFIX+LanguageManager.parseMsg("command.add.added"));
+									p.sendMessage(Variables.PREFIX+LanguageManager.parseMsg("command.add.added", name));
 								} else sendNoPermission(p);
 							} else p.sendMessage(Variables.PREFIX+LanguageManager.parseMsg("command.use.general", "/uh add (url) (name) (category)"));
 						} else sendNoPermission(p);

@@ -21,10 +21,10 @@ command:
     copy: §7Click here to §ecopy§7 this to the clipboard.
     open: §7Click here to §eopen§7 this URL.
   give:
-    receive: You have been given a head named §6%0%§7.
-    given: You have given §6%0%§7 a head named §6%1%§7.
+    receive: You have been given a head named §9%0%§7.
+    given: You have given §6%0%§7 a head named §9%1%§7.
   add:
-    added: The head named §6%0%§7 has been §aadded§7.
+    added: The head named §9%0%§7 has been §aadded§7.
   help:
     needsperm: §e*§7: Needs extra permission to be executed
     line1: /gs gui §8> §7Open gui§e*
@@ -117,9 +117,9 @@ gui:
 autoupdate:
   begin: Checking for new updates...
   result:
-    noupdate: §7The plugin is up to date! You are running the §alatest§7 version of §6%0%§7.
-    found1: §7A new update has been §afound§7. Version: %0%
-    found2: §7The update is installed when the server is
+    noupdate: The plugin is up to date! You are running the §alatest§7 version of §6%0%§7.
+    found1: A new update has been §afound§7. Version: %0%
+    found2: The update is installed when the server is
     found3: §eclosed §7or §erestarted§7.
   error:
     noconnection: Couldn't connect to the server. Make sure you are connected to the §cinternet§7.

@@ -12,12 +12,10 @@ public abstract class StaticMenu extends Menu {
 	
 	public abstract String getTitle();
 	
-	@SuppressWarnings("unchecked")
 	public void updateTitle() {
 		setTitle(getTitle());
 		AsyncUtil.runSync(() -> {
-			for(Player p:(ArrayList<Player>)viewers.clone()) {
-				GuiManager.setOpenedMenu(p, this);
+			for(Player p:viewers) {
 				super.openFor(p);
 			}
 		});

@@ -10,7 +10,6 @@ import de.stylextv.ultimateheads.util.AsyncUtil;
 
 public class GuiManager {
 	
-	private static MainMenu mainMenu;
 	private static SettingsMenu settingsMenu;
 	private static ConfigMenu configMenu;
 	
@@ -34,14 +33,11 @@ public class GuiManager {
 		setOpenedMenu(p, configMenu);
 		configMenu.openFor(p);
 	}
-	public static void openMainMenu(Player p) {
-		if(mainMenu == null) {
-			mainMenu = new MainMenu();
-			mainMenu.create();
-		}
-		
-		setOpenedMenu(p, mainMenu);
-		mainMenu.openForViewer(p);
+	public static void openMainMenu(Player p, int page) {
+		MainMenu menu = new MainMenu(p, page);
+		menu.create();
+		setOpenedMenu(p, menu);
+		menu.openFor(p);
 	}
 	public static void openHeadsListMenu(Player p, HeadListMenu list) {
 		list.create();
@@ -59,9 +55,9 @@ public class GuiManager {
 	public static void updateTranslations() {
 		if(settingsMenu != null) settingsMenu.updateTitle();
 		if(configMenu != null) configMenu.updateTitle();
-		if(mainMenu != null) mainMenu.updateTitle();
 		for(Menu m:openedMenues.values()) {
 			if(m instanceof HeadListMenu) ((HeadListMenu)m).updateTitle();
+			else if(m instanceof MainMenu) ((MainMenu)m).updateTitle();
 		}
 	}
 	
@@ -89,8 +85,8 @@ public class GuiManager {
 	}
 	
 	public static void updateMainMenu() {
-		if(mainMenu != null) {
-			mainMenu.updateTitle();
+		for(Menu m:openedMenues.values()) {
+			if(m instanceof MainMenu) ((MainMenu)m).updateTitle();
 		}
 	}
 	

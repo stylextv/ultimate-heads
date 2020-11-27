@@ -21,10 +21,10 @@ command:
     copy: §7Klicken Sie hier, um dies in die Zwischenablage zu §ekopieren§7.
     open: §7Klicken Sie hier, um diese URL zu §eöffnen§7.
   give:
-    receive: Sie haben einen Kopf namens §6%0%§7 erhalten.
-    given: Sie haben §6%0%§7 einen Kopf namens §6%1%§7 gegeben.
+    receive: Sie haben einen Kopf namens §9%0%§7 erhalten.
+    given: Sie haben §6%0%§7 einen Kopf namens §9%1%§7 gegeben.
   add:
-    added: Der Kopf mit dem Namen §6%0%§7 wurde §ahinzugefügt§7.
+    added: Der Kopf mit dem Namen §9%0%§7 wurde §ahinzugefügt§7.
   help:
     needsperm: §e*§7: Benötigt zusätzliche Erlaubnis
     line1: /gs gui §8> §7Öffne Menü§e*

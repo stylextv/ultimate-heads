@@ -68,7 +68,7 @@ public class Main extends JavaPlugin {
 		c.setTabCompleter(tabCompleter);
 	}
 	private void enableMetrics() {
-		new Metrics(this);
+		new Metrics(this, Variables.METRICS_ID);
 	}
 	private void enableAutoUpdater() {
 		autoUpdater = new AutoUpdater(plugin);

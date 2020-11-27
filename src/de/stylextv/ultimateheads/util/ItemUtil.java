@@ -46,9 +46,12 @@ public class ItemUtil {
 		create();
 	}
 	public static void create() {
+		Material comparatorMaterial;
 		if(VersionUtil.getMcVersion() < VersionUtil.MC_1_13) {
+			comparatorMaterial = Material.valueOf("REDSTONE_COMPARATOR");
 			BLANK = createItemStack(Material.valueOf("STAINED_GLASS_PANE"), 15, "§r");
 		} else {
+			comparatorMaterial = Material.COMPARATOR;
 			BLANK = createItemStack(Material.BLACK_STAINED_GLASS_PANE, "§r");
 		}
 		EMPTY = createItemStack(Material.AIR);
@@ -59,7 +62,7 @@ public class ItemUtil {
 		
 		HEAD_BACK = createMenuItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWE2Nzg3YmEzMjU2NGU3YzJmM2EwY2U2NDQ5OGVjYmIyM2I4OTg0NWU1YTY2YjVjZWM3NzM2ZjcyOWVkMzcifX19", LanguageManager.parseMsg("gui.item.back.name"), LanguageManager.parseMsg("gui.item.back.desc"));
 		
-		SETTINGS = createMenuItem(Material.COMPARATOR, LanguageManager.parseMsg("gui.item.settings.name"), LanguageManager.parseMsg("gui.item.settings.desc"));
+		SETTINGS = createMenuItem(comparatorMaterial, LanguageManager.parseMsg("gui.item.settings.name"), LanguageManager.parseMsg("gui.item.settings.desc"));
 		
 		SETTINGS_CONFIG = createMenuItem(Material.BOOKSHELF, LanguageManager.parseMsg("gui.item.config.name"), LanguageManager.parseMsg("gui.item.config.desc"));
 		String updateTexture = "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzA0MGZlODM2YTZjMmZiZDJjN2E5YzhlYzZiZTUxNzRmZGRmMWFjMjBmNTVlMzY2MTU2ZmE1ZjcxMmUxMCJ9fX0=";

@@ -1,7 +1,5 @@
 package de.stylextv.ultimateheads.head;
 
-import java.util.List;
-
 import org.bukkit.inventory.ItemStack;
 
 import de.stylextv.ultimateheads.lang.LanguageManager;
@@ -23,11 +21,8 @@ public class Category {
 		this.latestPack = latestPack;
 	}
 	
-	public ItemStack asItemStack() {
-		List<Head> heads = latestPack?HeadManager.getHeadsOfLatestPack():HeadManager.getHeadsByCategory(this);
-		Head firstHead = heads.get(0);
+	public ItemStack asItemStack(int i, Head firstHead) {
 		String name = ColorUtil.getRandomColor()+this.name;
-		int i = heads.size();
 		return ItemUtil.createItemStack(ItemUtil.headUrlToValue(firstHead.getUrl()), name, latestPack?"§e"+firstHead.getPack():"§e"+LanguageManager.parseMsg("gui.category.lore"+(i==1?"2":"1"), MathUtil.formatInt(i)));
 	}
 	

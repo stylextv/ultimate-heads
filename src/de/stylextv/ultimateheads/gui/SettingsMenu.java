@@ -66,7 +66,7 @@ public class SettingsMenu extends StaticMenu {
 	}
 	
 	public void kickPlayerToMainMenu(Player p) {
-		GuiManager.openMainMenu(p);
+		GuiManager.openMainMenu(p, 0);
 	}
 	
 }

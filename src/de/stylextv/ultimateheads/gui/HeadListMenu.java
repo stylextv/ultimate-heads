@@ -22,11 +22,14 @@ import de.stylextv.ultimateheads.player.PlayerManager;
 import de.stylextv.ultimateheads.util.AsyncUtil;
 import de.stylextv.ultimateheads.util.ItemUtil;
 import de.stylextv.ultimateheads.util.MathUtil;
+import de.stylextv.ultimateheads.version.VersionUtil;
 
 public class HeadListMenu extends Menu {
 	
 	private Player p;
 	private ListType type;
+	
+	private int mainMenuPage;
 	
 	private Category c;
 	private String query;
@@ -35,9 +38,11 @@ public class HeadListMenu extends Menu {
 	private int page;
 	private int pages;
 	
-	public HeadListMenu(Player p, ListType type, Category c, String query) {
+	public HeadListMenu(Player p, ListType type, Category c, String query, int mainMenuPage) {
 		this.p = p;
 		this.type = type;
+		
+		this.mainMenuPage = mainMenuPage;
 		
 		this.c = c;
 		this.query = query;
@@ -98,7 +103,6 @@ public class HeadListMenu extends Menu {
 	public void updateTitle() {
 		setTitle(getTitle());
 		AsyncUtil.runSync(() -> {
-			GuiManager.setOpenedMenu(p, this);
 			openFor(p);
 		});
 	}
@@ -111,12 +115,13 @@ public class HeadListMenu extends Menu {
 					query = getName()+", "+answer;
 					type = ListType.SEARCH;
 				} else query = query+", "+answer;
-				heads = heads.stream().filter(h -> h.getName().toLowerCase().contains(answerLower)).collect(Collectors.toList());
+				heads = heads.stream().filter(h -> HeadManager.doesHeadMatch(h, answerLower)).collect(Collectors.toList());
 				pages = (int) Math.ceil(heads.size()/45.0);
 				if(pages < 1) pages = 1;
 				page = 0;
 				fillConstants();
 				updateDynamicContent();
+				GuiManager.setOpenedMenu(p, this);
 				updateTitle();
 			} else p.sendMessage(Variables.PREFIX+LanguageManager.parseMsg("prompt.canceled"));
 		});
@@ -134,16 +139,16 @@ public class HeadListMenu extends Menu {
 			} else setItem(9+i, ItemUtil.EMPTY);
 		}
 		
-		setItem(4, 0, ItemUtil.createMenuItem(Material.MAP, page+1, LanguageManager.parseMsg("gui.item.pageback.name"), LanguageManager.parseMsg("gui.item.pageback.desc")));
+		setItem(4, 0, ItemUtil.createMenuItem(VersionUtil.getMcVersion()<VersionUtil.MC_1_13?Material.valueOf("EMPTY_MAP"):Material.MAP, page+1, LanguageManager.parseMsg("gui.item.pageback.name"), LanguageManager.parseMsg("gui.item.pageback.desc")));
 		for(int i=1; i<=3; i++) {
-			if(page+i < pages) setItem(5+i, getArrow(i, page+i+1, true));
+			if(page+i < pages) setItem(5+i, getArrow(i, page+i+1, true, true));
 			else setItem(5+i, ItemUtil.BLANK);
-			if(page-i >= 0) setItem(3-i, getArrow(i, page-i+1, true));
+			if(page-i >= 0) setItem(3-i, getArrow(i, page-i+1, true, true));
 			else setItem(3-i, ItemUtil.BLANK);
 		}
 	}
-	private static ItemStack getArrow(int offset, int number, boolean right) {
-		return ItemUtil.createMenuItem(Material.ARROW, number, LanguageManager.parseMsg("gui.item.arrow.name", number), LanguageManager.parseMsg("gui.item."+(right?"right":"left")+".desc"+(offset==1?"1":"2"), offset));
+	public static ItemStack getArrow(int offset, int number, boolean right, boolean useItemCounter) {
+		return ItemUtil.createMenuItem(Material.ARROW, useItemCounter?number:1, LanguageManager.parseMsg("gui.item.arrow.name", number), LanguageManager.parseMsg("gui.item."+(right?"right":"left")+".desc"+(offset==1?"1":"2"), offset));
 	}
 	
 	@Override
@@ -152,7 +157,7 @@ public class HeadListMenu extends Menu {
 		if(slot==4) {
 			if(PermissionUtil.hasGuiPermission(p)) {
 				playClickSound(p, true);
-				GuiManager.openMainMenu(p);
+				GuiManager.openMainMenu(p, mainMenuPage);
 			} else {
 				kickPlayerForNoPerm(p);
 			}
@@ -160,7 +165,7 @@ public class HeadListMenu extends Menu {
 			if(PermissionUtil.hasGuiPermission(p)) {
 				playClickSound(p, true);
 				closeInventory(p);
-				startNewSearch(p);
+				startNewSearch(p, mainMenuPage);
 			} else {
 				kickPlayerForNoPerm(p);
 			}
@@ -228,9 +233,9 @@ public class HeadListMenu extends Menu {
 	public void onClose(Player p) {
 	}
 	
-	public static void startNewSearch(Player p) {
+	public static void startNewSearch(Player p, int mainMenuPage) {
 		ChatPromptManager.sendChatPrompt(p, LanguageManager.parseMsg("prompt.search"), (answer) -> {
-			if(answer != null) GuiManager.openHeadsListMenu(p, new HeadListMenu(p, ListType.SEARCH, null, answer));
+			if(answer != null) GuiManager.openHeadsListMenu(p, new HeadListMenu(p, ListType.SEARCH, null, answer, mainMenuPage));
 			else p.sendMessage(Variables.PREFIX+LanguageManager.parseMsg("prompt.canceled"));
 		});
 	}

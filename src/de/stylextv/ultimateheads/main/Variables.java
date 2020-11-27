@@ -16,6 +16,8 @@ public class Variables {
 	public static String AUTHOR;
 	public static String VERSION;
 	
+	public static int METRICS_ID=9420;
+	
 	public static void loadScheme() {
 		if(VersionUtil.getMcVersion() >= VersionUtil.MC_1_16) {
 			COLOR1 = ChatColor.of("#E91E45").toString();
