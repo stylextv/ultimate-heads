@@ -1,0 +1,145 @@
+general:
+  word:
+    everyone: 全体玩家
+    required: 必填项
+    optional: 选填项
+    page: 页码
+    favorites: 收藏
+    query: 搜索
+    heads: %0% 个头颅
+    head: %0% 个头颅
+command:
+  use:
+    general: 请使用 §c%0%§7.
+    help: 请使用 §e/uh help§7 来获取命令清单。
+  error:
+    headnotfound: 没有找到相应头颅的 ID §c'%0%'§7。
+    noplayer: 这个命令只能由 §c玩家§r 执行。
+    novalidhead: 您目前没有在 §c手持§7 一个有效头颅。
+    noperm: 您没有相应的 §c权限§7 来那么做。
+  hover:
+    copy: §7点击这里以 §e复制§7 此至剪贴板。
+    open: §7点击这里以 §e打开§7 这个 链接(URL)。
+  give:
+    receive: 您收到了一个名称为 §9%0%§7 的头颅。
+    given: 您给予了玩家 §6%0%§7 一个名称为 §9%1%§7 的头颅。
+  add:
+    added: 名称为 §9%0%§7 的头颅已被 §a添加§7。
+  help:
+    needsperm: §e*§7: 需要额外的权限来运行
+    line1: /gs gui §8> §7打开 gui 菜单§e*
+    line2: /gs search §8> §7搜索头颅§e*
+    line3: /gs give (玩家/all) (global/local)
+    line4: (head_id) §8> §7给予头颅§e*
+    line5: /gs base64 §8> §7获取 base64 编码值§e*
+    line6: /gs url §8> §7获取材质链接(url)§e*
+    line7: /gs add (url) (名称) (category) §8>
+    line8: §7添加头颅§e*
+    line9: /gs update §8> §7更新插件§e*
+    line10: /gs help §8> §7显示帮助
+    line11: /gs info §8> §7显示插件信息
+  info:
+    title:                    信息
+    line1: §7§o您正在使用开源的
+    line2: §7§o 头颅数据库插件 §e%0%§7§o!
+    line3: §8- §7开发者 §8> §b%0%
+    line4: §8- §7运行中的版本 §8> §b%0%
+config:
+  range: 范围: %0% - %1%
+  options: 配置: %0%
+  type: 类型: %0%
+  currentvalue: 当前值: §b%0%
+  name:
+    language: 语言
+    playerhead_on_death: 在玩家死亡时掉落其的头颅
+  desc:
+    language1: 语言文件
+    language2: 将会被插件
+    language3: 显示信息和其他文本。
+    playerhead_on_death1: 一个玩家在被
+    playerhead_on_death2: 另一个玩家击杀时
+    playerhead_on_death3: 头颅掉落的
+    playerhead_on_death4: 百分比概率。
+prompt:
+  refine: 请输入 §e检索词§7 来精确查找。
+  search: 请输入您的 §e检索词§7。
+  canceled: 搜索已被 §c取消§7。
+gui:
+  title:
+    config: 配置文件
+    settings: 设置
+  category:
+    lore1: %0%§7 个头颅
+    lore2: %0%§7 个头颅
+  head:
+    lore:
+      pack: 集成: %0%
+      staff: 被管理成员收藏
+      delete: 点击 鼠标中键 以删除
+  item:
+    arrow:
+      name: §e§l第 %0% 页
+    left:
+      desc1: 点击这里以向左跳转 %0% 页。
+      desc2: 点击这里以向左跳转 %0% 页。
+    right:
+      desc1: 点击这里以向右跳转 %0% 页。
+      desc2: 点击这里以向右跳转 %0% 页。
+    back:
+      name: §e§l返回
+      desc: 点击这里跳转到先前的菜单。
+    pageback:
+      name: §e§l返回至类型页面
+      desc: 点击这里以返回至库存类型界面。
+    settings:
+      name: §c§l设置
+      desc: 点击这里打开设置。
+    config:
+      name: §5§l配置文件
+      desc: 点击这里早游戏内编辑配置文件。
+    update:
+      name: §b§l更新插件
+      desc: 点击这里以在不离开游戏的情形下自动更新插件至最新版本。
+    restoreconfig:
+      name: §b§l重置为默认配置
+      desc: 点击这里将配置文件恢复为默认。
+    searchnew:
+      name: §e§l新建搜索
+      desc: 打开这里以新建搜索进程。
+    searchrefine:
+      name: §e§l精确搜索
+      desc: 点击这里进一步精确您当前进行的搜索。
+    favorites:
+      name: §6§l收藏
+      desc: Shift 点击任何头颅将其标记并保存为收藏。
+    option:
+      left:
+        name: §e§l前一个
+        desc: 点击这里检索上一个选项。
+      right:
+        name: §e§l下一个
+        desc: 点击这里检索下一个选项。
+      plus:
+        name: §e§l加
+        desc1: §7点击这里以
+        desc2: §7增加当前的数据值。
+      minus:
+        name: §e§lMinus
+        desc1: §7点击这里以
+        desc2: §7减少当前的数据值。
+      plusminus:
+        desc1: §b§o左键§7 单击: §e%0%1
+        desc2: §b§oShift§7 + §b§o左键§7 单击: §e%0%5
+autoupdate:
+  begin: 正在检查是否有更新可用...
+  result:
+    noupdate: 插件已然是最新的了! 您正在运行 §a最新§7 版本的版本号为 §6%0%§7。
+    found1: 一个新的更新已然被 §a检测到§7。版本号: %0%
+    found2: 更新将在服务器
+    found3: §e关闭 §7或 §e重启后§7 被安装
+  error:
+    noconnection: 无法连接至更新服务器。请确保您已连接至 §c互联网§7。
+    unknown: 一个 §c错误§7 在检查更新时发生了!
+    alreadyfound1: 一个新的更新 §e已经§7 被发现过了。版本号为: %0%
+    alreadyfound2: 更新将在服务器 §e关闭 §7或 §e重启后§7 不久安装。
+    alreadysearching: §e其他更新进程§7 已经在搜寻是否有可用的更新了。
