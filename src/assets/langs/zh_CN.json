@@ -54,7 +54,7 @@ config:
     playerhead_on_death: 在玩家死亡时掉落其的头颅
   desc:
     language1: 语言文件
-    language2: 将会被插件
+    language2: 将会被插件用于
     language3: 显示信息和其他文本。
     playerhead_on_death1: 一个玩家在被
     playerhead_on_death2: 另一个玩家击杀时
@@ -63,7 +63,7 @@ config:
 prompt:
   refine: 请输入 §e检索词§7 来精确查找。
   search: 请输入您的 §e检索词§7。
-  canceled: 搜索已被 §c取消§7。
+  canceled: 搜索进程已被 §c取消§7。
 gui:
   title:
     config: 配置文件
@@ -124,7 +124,7 @@ gui:
         desc1: §7点击这里以
         desc2: §7增加当前的数据值。
       minus:
-        name: §e§lMinus
+        name: §e§l减
         desc1: §7点击这里以
         desc2: §7减少当前的数据值。
       plusminus:
