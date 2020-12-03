@@ -43,7 +43,7 @@ public class SettingsMenu extends StaticMenu {
 		if(slot==20) {
 			if(PermissionUtil.hasGuiPermission(p) && PermissionUtil.hasConfigPermission(p)) {
 				playClickSound(p, true);
-				GuiManager.openConfigMenu(p);
+				GuiManager.openConfigMenu(p, getPlayerMainMenu(p));
 			} else {
 				kickPlayerForNoPerm(p);
 			}
@@ -66,7 +66,9 @@ public class SettingsMenu extends StaticMenu {
 	}
 	
 	public void kickPlayerToMainMenu(Player p) {
-		GuiManager.openMainMenu(p, 0);
+		MainMenu menu = getPlayerMainMenu(p);
+		GuiManager.setOpenedMenu(p, menu);
+		menu.openFor(p);
 	}
 	
 }

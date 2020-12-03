@@ -33,7 +33,7 @@ public class Head {
     	return asItemStack(false, false);
     }
     public ItemStack asItemStack(boolean favorite, boolean info) {
-    	String name = (favorite ? "§6⭐ " : "")+"§9"+this.name;
+    	String name = getDisplayName(favorite);
     	if(info) {
     		ArrayList<String> lore = new ArrayList<String>();
     		if(pack != null) {
@@ -48,6 +48,9 @@ public class Head {
     		}
     		return ItemUtil.createItemStack(ItemUtil.headUrlToValue(url), name, lore);
     	} else return ItemUtil.createItemStack(ItemUtil.headUrlToValue(url), name);
+    }
+    public String getDisplayName(boolean favorite) {
+    	return (favorite ? "§6⭐ " : "")+"§9"+this.name;
     }
     
 	public int getId() {

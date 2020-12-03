@@ -142,8 +142,8 @@ public class HeadManager {
 		localHeads.add(h);
 		GuiManager.updateMainMenu();
 	}
-	public static int removeLocalHead(String name) {
-		List<Head> results = localHeads.stream().filter(h -> h.getName().equals(name)).collect(Collectors.toList());
+	public static int removeLocalHead(String name, boolean fromPlayers) {
+		List<Head> results = localHeads.stream().filter(h -> h.getName().equals(name)&&(!fromPlayers||h.getCategory().getName().equalsIgnoreCase("Player Heads"))).collect(Collectors.toList());
 		int id=-1;
 		for(Head h:results) {
 			id = h.getId();
@@ -213,6 +213,11 @@ public class HeadManager {
 		if(optional.isPresent()) return optional.get();
 		return null;
 	}
+	public static Head getHeadByUrl(String url) {
+		Optional<Head> optional = getAllHeads().stream().filter(h -> h.getUrl().equals(url)).findFirst();
+		if(optional.isPresent()) return optional.get();
+		return null;
+	}
 	public static List<Head> getAllHeads() {
 		Stream<Head> stream = Stream.concat(heads.stream(), localHeads.stream());
 		stream = stream.sorted((Head h1, Head h2) -> h1.getName().toLowerCase().compareTo(h2.getName().toLowerCase()));
@@ -233,9 +238,19 @@ public class HeadManager {
 	}
 	public static void addPlayerToLocalHeads(Player p) {
 		String name = p.getName();
-		int id=removeLocalHead(name);
+		int id=removeLocalHead(name, true);
 		if(id==-1) id=HeadManager.getNextLocalId();
 		addLocalHead(new Head(id, name, ItemUtil.headValueToUrl(ItemUtil.getHeadValue(p), true), null, false, true, HeadManager.getOrAddCategory("Player Heads")));
+	}
+	public static Head getPlayerHead(Player p) {
+		String name = p.getName();
+		Optional<Head> optional = localHeads.stream().filter(h -> h.getCategory().getName().equalsIgnoreCase("Player Heads")&&h.getName().equals(name)).findFirst();
+		if(optional.isPresent()) return optional.get();
+		
+		int id=HeadManager.getNextLocalId();
+		Head h = new Head(id, name, ItemUtil.headValueToUrl(ItemUtil.getHeadValue(p), true), null, false, true, HeadManager.getOrAddCategory("Player Heads"));
+		addLocalHead(h);
+		return h;
 	}
 	
 	public static ArrayList<Category> getCategories() {

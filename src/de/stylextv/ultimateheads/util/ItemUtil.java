@@ -89,10 +89,10 @@ public class ItemUtil {
 	}
 	
 	public static ItemStack createConfigMinusItemStack() {
-		return createItemStack("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmQ4YTk5ZGIyYzM3ZWM3MWQ3MTk5Y2Q1MjYzOTk4MWE3NTEzY2U5Y2NhOTYyNmEzOTM2Zjk2NWIxMzExOTMifX19", LanguageManager.parseMsg("gui.item.option.minus.name"), LanguageManager.parseMsg("gui.item.minus.desc1"),LanguageManager.parseMsg("gui.item.minus.desc2"),"",LanguageManager.parseMsg("gui.item.plusminus.desc1","-"),LanguageManager.parseMsg("gui.item.plusminus.desc2","-"));
+		return createItemStack("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmQ4YTk5ZGIyYzM3ZWM3MWQ3MTk5Y2Q1MjYzOTk4MWE3NTEzY2U5Y2NhOTYyNmEzOTM2Zjk2NWIxMzExOTMifX19", LanguageManager.parseMsg("gui.item.option.minus.name"), LanguageManager.parseMsg("gui.item.option.minus.desc1"),LanguageManager.parseMsg("gui.item.option.minus.desc2"),"",LanguageManager.parseMsg("gui.item.option.plusminus.desc1","-"),LanguageManager.parseMsg("gui.item.option.plusminus.desc2","-"));
 	}
 	public static ItemStack createConfigPlusItemStack() {
-		return createItemStack("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2VkZDIwYmU5MzUyMDk0OWU2Y2U3ODlkYzRmNDNlZmFlYjI4YzcxN2VlNmJmY2JiZTAyNzgwMTQyZjcxNiJ9fX0=", LanguageManager.parseMsg("gui.item.option.plus.name"), LanguageManager.parseMsg("gui.item.plus.desc1"),LanguageManager.parseMsg("gui.item.plus.desc2"),"",LanguageManager.parseMsg("gui.item.plusminus.desc1","+"),LanguageManager.parseMsg("gui.item.plusminus.desc2","+"));
+		return createItemStack("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2VkZDIwYmU5MzUyMDk0OWU2Y2U3ODlkYzRmNDNlZmFlYjI4YzcxN2VlNmJmY2JiZTAyNzgwMTQyZjcxNiJ9fX0=", LanguageManager.parseMsg("gui.item.option.plus.name"), LanguageManager.parseMsg("gui.item.option.plus.desc1"),LanguageManager.parseMsg("gui.item.option.plus.desc2"),"",LanguageManager.parseMsg("gui.item.option.plusminus.desc1","+"),LanguageManager.parseMsg("gui.item.option.plusminus.desc2","+"));
 	}
 	public static ItemStack createConfigOptionLeftItemStack() {
 		return createMenuItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmQ2OWUwNmU1ZGFkZmQ4NGU1ZjNkMWMyMTA2M2YyNTUzYjJmYTk0NWVlMWQ0ZDcxNTJmZGM1NDI1YmMxMmE5In19fQ==", LanguageManager.parseMsg("gui.item.option.left.name"), LanguageManager.parseMsg("gui.item.option.left.desc"));

@@ -29,7 +29,7 @@ public class HeadListMenu extends Menu {
 	private Player p;
 	private ListType type;
 	
-	private int mainMenuPage;
+	private MainMenu menu;
 	
 	private Category c;
 	private String query;
@@ -38,11 +38,11 @@ public class HeadListMenu extends Menu {
 	private int page;
 	private int pages;
 	
-	public HeadListMenu(Player p, ListType type, Category c, String query, int mainMenuPage) {
+	public HeadListMenu(Player p, ListType type, Category c, String query, MainMenu menu) {
 		this.p = p;
 		this.type = type;
 		
-		this.mainMenuPage = mainMenuPage;
+		this.menu = menu;
 		
 		this.c = c;
 		this.query = query;
@@ -157,7 +157,7 @@ public class HeadListMenu extends Menu {
 		if(slot==4) {
 			if(PermissionUtil.hasGuiPermission(p)) {
 				playClickSound(p, true);
-				GuiManager.openMainMenu(p, mainMenuPage);
+				GuiManager.openMainMenu(p, menu);
 			} else {
 				kickPlayerForNoPerm(p);
 			}
@@ -165,7 +165,7 @@ public class HeadListMenu extends Menu {
 			if(PermissionUtil.hasGuiPermission(p)) {
 				playClickSound(p, true);
 				closeInventory(p);
-				startNewSearch(p, mainMenuPage);
+				startNewSearch(p, menu);
 			} else {
 				kickPlayerForNoPerm(p);
 			}
@@ -233,11 +233,15 @@ public class HeadListMenu extends Menu {
 	public void onClose(Player p) {
 	}
 	
-	public static void startNewSearch(Player p, int mainMenuPage) {
+	public static void startNewSearch(Player p, MainMenu menu) {
 		ChatPromptManager.sendChatPrompt(p, LanguageManager.parseMsg("prompt.search"), (answer) -> {
-			if(answer != null) GuiManager.openHeadsListMenu(p, new HeadListMenu(p, ListType.SEARCH, null, answer, mainMenuPage));
+			if(answer != null) GuiManager.openHeadsListMenu(p, new HeadListMenu(p, ListType.SEARCH, null, answer, menu));
 			else p.sendMessage(Variables.PREFIX+LanguageManager.parseMsg("prompt.canceled"));
 		});
+	}
+	
+	public MainMenu getMainMenu() {
+		return menu;
 	}
 	
 }

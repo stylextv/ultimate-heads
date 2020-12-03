@@ -58,7 +58,7 @@ public class MainMenu extends Menu {
 	}
 	public void updateTitle() {
 		setTitle(getTitle());
-		AsyncUtil.runSync(() -> {
+		if(GuiManager.hasOpened(p, this)) AsyncUtil.runSync(() -> {
 			openFor(p);
 		});
 	}
@@ -134,7 +134,7 @@ public class MainMenu extends Menu {
 			if(PermissionUtil.hasGuiPermission(p)) {
 				playClickSound(p, true);
 				AsyncUtil.runAsync(() -> {
-					GuiManager.openHeadsListMenu(p, new HeadListMenu(p, ListType.FAVORITES, null, null, page));
+					GuiManager.openHeadsListMenu(p, new HeadListMenu(p, ListType.FAVORITES, null, null, this));
 				});
 			} else {
 				kickPlayerForNoPerm(p);
@@ -143,14 +143,14 @@ public class MainMenu extends Menu {
 			if(PermissionUtil.hasGuiPermission(p)) {
 				playClickSound(p, true);
 				closeInventory(p);
-				HeadListMenu.startNewSearch(p, page);
+				HeadListMenu.startNewSearch(p, this);
 			} else {
 				kickPlayerForNoPerm(p);
 			}
 		} else if(slot==getLastY()*9+5) {
 			if(PermissionUtil.hasGuiPermission(p) && (PermissionUtil.hasUpdatePermission(p) || PermissionUtil.hasConfigPermission(p))) {
 				playClickSound(p, true);
-				GuiManager.openSettingsMenu(p);
+				GuiManager.openSettingsMenu(p, this);
 			} else {
 				kickPlayerForNoPerm(p);
 			}
@@ -197,7 +197,7 @@ public class MainMenu extends Menu {
 						if(PermissionUtil.hasGuiPermission(p) && PermissionUtil.hasCategoryPermission(p, c)) {
 							playClickSound(p, true);
 							AsyncUtil.runAsync(() -> {
-								GuiManager.openHeadsListMenu(p, new HeadListMenu(p, c.isLatestPack()?ListType.PACK:ListType.CATEGORY, c, null, page));
+								GuiManager.openHeadsListMenu(p, new HeadListMenu(p, c.isLatestPack()?ListType.PACK:ListType.CATEGORY, c, null, this));
 							});
 						} else {
 							kickPlayerForNoPerm(p);

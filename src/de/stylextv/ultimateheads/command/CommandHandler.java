@@ -77,7 +77,7 @@ public class CommandHandler {
 					} else if(subCommand.equalsIgnoreCase("search")) {
 						if(hasPermGui && hasPermSearch) {
 							if(args.length==1) {
-								HeadListMenu.startNewSearch(p, 0);
+								HeadListMenu.startNewSearch(p, null);
 							} else p.sendMessage(Variables.PREFIX+LanguageManager.parseMsg("command.use.general", "/uh search"));
 						} else sendNoPermission(p);
 					} else if(subCommand.equalsIgnoreCase("give")) {

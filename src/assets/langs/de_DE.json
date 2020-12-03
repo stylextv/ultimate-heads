@@ -51,10 +51,15 @@ config:
   currentvalue: Aktueller Wert: §b%0%
   name:
     language: Sprache
+    playerhead_on_death: Kopf beim Tod fallen lassen
   desc:
     language1: Die Sprache, in der das
     language2: Plugin Nachrichten und
     language3: andere Texte anzeigt.
+    playerhead_on_death1: Die Wahrscheinlichkeit in Prozent,
+    playerhead_on_death2: dass ein Spieler seinen Kopf
+    playerhead_on_death3: fallen lässt, wenn er von einem
+    playerhead_on_death4: anderen Spieler getötet wird.
 prompt:
   refine: Geben Sie einen §eSuchbegriff§7 ein, um Ihre Suche zu verfeinern.
   search: Geben Sie Ihren §eSuchbegriff§7 ein.
@@ -114,6 +119,17 @@ gui:
       right:
         name: §e§lNächste
         desc: Klicken Sie hier, um die nächste Option auszuwählen.
+      plus:
+        name: §e§lPlus
+        desc1: §7Klicken Sie hier, um
+        desc2: §7den aktuellen Wert zu erhöhen.
+      minus:
+        name: §e§lMinus
+        desc1: §7Klicken Sie hier, um
+        desc2: §7den aktuellen Wert zu verringern.
+      plusminus:
+        desc1: §b§oLinks§7-Klick: §e%0%1
+        desc2: §b§oUmschalt§7 + §b§oLinks§7-Klick: §e%0%5
 autoupdate:
   begin: Prüfe auf neue Updates...
   result:

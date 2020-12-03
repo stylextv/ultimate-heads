@@ -51,10 +51,15 @@ config:
   currentvalue: Current value: §b%0%
   name:
     language: Language
+    playerhead_on_death: Drop player head on death
   desc:
     language1: The language in which the
     language2: plugin will display
     language3: messages and other texts.
+    playerhead_on_death1: The probability in percent
+    playerhead_on_death2: that a player will drop his
+    playerhead_on_death3: head when killed by another
+    playerhead_on_death4: player.
 prompt:
   refine: Enter a §esearch term§7 to refine your search.
   search: Enter your §esearch term§7.
@@ -114,6 +119,17 @@ gui:
       right:
         name: §e§lNext
         desc: Click here to select the next option.
+      plus:
+        name: §e§lPlus
+        desc1: §7Click here to add
+        desc2: §7to the current value.
+      minus:
+        name: §e§lMinus
+        desc1: §7Click here to remove
+        desc2: §7from the current value.
+      plusminus:
+        desc1: §b§oLeft§7 click: §e%0%1
+        desc2: §b§oShift§7 + §b§oleft§7 click: §e%0%5
 autoupdate:
   begin: Checking for new updates...
   result:

@@ -13,7 +13,9 @@ import de.stylextv.ultimateheads.command.MainTabCompleter;
 import de.stylextv.ultimateheads.config.ConfigManager;
 import de.stylextv.ultimateheads.event.EventChat;
 import de.stylextv.ultimateheads.event.EventGui;
+import de.stylextv.ultimateheads.event.EventItem;
 import de.stylextv.ultimateheads.event.EventPlayerCommand;
+import de.stylextv.ultimateheads.event.EventPlayerDeath;
 import de.stylextv.ultimateheads.event.EventPlayerJoinQuit;
 import de.stylextv.ultimateheads.gui.GuiManager;
 import de.stylextv.ultimateheads.head.HeadManager;
@@ -61,6 +63,8 @@ public class Main extends JavaPlugin {
 		pm.registerEvents(new EventGui(), plugin);
 		pm.registerEvents(new EventChat(), plugin);
 		pm.registerEvents(new EventPlayerCommand(), plugin);
+		pm.registerEvents(new EventPlayerDeath(), plugin);
+		pm.registerEvents(new EventItem(), plugin);
 	}
 	private void registerCommand(String name, MainTabCompleter tabCompleter) {
 		PluginCommand c = getCommand(name);

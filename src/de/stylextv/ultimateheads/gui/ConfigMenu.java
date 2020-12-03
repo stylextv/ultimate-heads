@@ -29,8 +29,8 @@ public class ConfigMenu extends StaticMenu {
 		setItem(4, 1, ItemUtil.CONFIG_DEFAULT);
 //		setPlusMinusButtons(2, 2, ConfigManager.VALUE_VIEW_DISTANCE);
 //		setPlusMinusButtons(6, 2, ConfigManager.VALUE_MAP_SENDS_PER_3TICKS);
-//		setPlusMinusButtons(2, 3, ConfigManager.VALUE_RESERVED_VANILLA_MAPS);
-		setPlusMinusButtons(4, 2, ConfigManager.VALUE_LANGUAGE);
+		setPlusMinusButtons(2, 2, ConfigManager.VALUE_PLAYERHEAD_DROP_CHANCE);
+		setPlusMinusButtons(6, 2, ConfigManager.VALUE_LANGUAGE);
 	}
 	private void setPlusMinusButtons(int x, int y, ConfigValue<?> value) {
 		setItem(x-1, y, value.getLeftButton());
@@ -46,8 +46,8 @@ public class ConfigMenu extends StaticMenu {
 	public void updateDynamicContent() {
 //		setItem(2, 2, ConfigManager.VALUE_VIEW_DISTANCE.getItemStack());
 //		setItem(6, 2, ConfigManager.VALUE_MAP_SENDS_PER_3TICKS.getItemStack());
-//		setItem(2, 3, ConfigManager.VALUE_RESERVED_VANILLA_MAPS.getItemStack());
-		setItem(4, 2, ConfigManager.VALUE_LANGUAGE.getItemStack());
+		setItem(2, 2, ConfigManager.VALUE_PLAYERHEAD_DROP_CHANCE.getItemStack());
+		setItem(6, 2, ConfigManager.VALUE_LANGUAGE.getItemStack());
 	}
 	
 	@Override
@@ -70,8 +70,8 @@ public class ConfigMenu extends StaticMenu {
 		} else {
 //			if(handleButtonPresses(p, slot, e, ConfigManager.VALUE_VIEW_DISTANCE, 2*9+2)) return;
 //			if(handleButtonPresses(p, slot, e, ConfigManager.VALUE_MAP_SENDS_PER_3TICKS, 2*9+6)) return;
-//			if(handleButtonPresses(p, slot, e, ConfigManager.VALUE_RESERVED_VANILLA_MAPS, 3*9+2)) return;
-			if(handleButtonPresses(p, slot, e, ConfigManager.VALUE_LANGUAGE, 2*9+4)) return;
+			if(handleButtonPresses(p, slot, e, ConfigManager.VALUE_PLAYERHEAD_DROP_CHANCE, 2*9+2)) return;
+			if(handleButtonPresses(p, slot, e, ConfigManager.VALUE_LANGUAGE, 2*9+6)) return;
 		}
 	}
 	private boolean handleButtonPresses(Player p, int slot, InventoryClickEvent e, ConfigValue<?> value, int valueSlot) {
@@ -90,7 +90,7 @@ public class ConfigMenu extends StaticMenu {
 	}
 	
 	public void kickPlayerToSettingsMenu(Player p) {
-		GuiManager.openSettingsMenu(p);
+		GuiManager.openSettingsMenu(p, getPlayerMainMenu(p));
 	}
 	
 }
