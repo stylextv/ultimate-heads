@@ -1,0 +1,145 @@
+general:
+  word:
+    everyone: todos
+    required: Obrigatório
+    optional: Opcional
+    page: Página
+    favorites: Favoritos
+    query: Buscar
+    heads: %0% cabeças
+    head: %0% cabeça
+command:
+  use:
+    general: Use §c%0%§7.
+    help: Use §e/uh help§7 para mostrar todos os comandos.
+  error:
+    headnotfound: Não foi possível achar a cabeça com o ID §c'%0%'§7.
+    noplayer: Este comando é somente para §cjogadores§r.
+    novalidhead: Você não está §csegurando§7 uma cabeça válida.
+    noperm: Você não tem §cpermissão§7 para fazer isso.
+  hover:
+    copy: §7Clique aqui para §ecopiar§7 isso para a área de transferência.
+    open: §7Clique aqui para §eabrir§7 essa URL.
+  give:
+    receive: Você recebeu uma cabeça chamada §9%0%§7.
+    given: Você deu para §6%0%§7 uma cabeça chamada §9%1%§7.
+  add:
+    added: A cabeça chamada §9%0%§7 foi §aadicionada§7.
+  help:
+    needsperm: §e*§7: Precisa de permissão para usar
+    line1: /gs gui §8> §7Abre a GUI§e*
+    line2: /gs search §8> §7Procura pela cabeça§e*
+    line3: /gs give (player/all) (global/local)
+    line4: (head_id) §8> §7Da uma cabeça§e*
+    line5: /gs base64 §8> §7Pega o valor em Base64§e*
+    line6: /gs url §8> §7Pega a textura da URL§e*
+    line7: /gs add (url) (nome) (categoria) §8>
+    line8: §7Adiciona uma cabeça§e*
+    line9: /gs update §8> §7Atualiza o plugin§e*
+    line10: /gs help §8> §7Mostra os comandos
+    line11: /gs info §8> §7Mostra as informações do plugin
+  info:
+    title:                    Informações
+    line1: §7§oVocê está usando um plugin de cabeças
+    line2: §7§o de código aberto §e%0%§7§o!
+    line3: §8- §7Desenvolvido por §8> §b%0%
+    line4: §8- §7Versão instalada §8> §b%0%
+config:
+  range: alcance: %0% - %1%
+  options: opções: %0%
+  type: tipo: %0%
+  currentvalue: Valor atual: §b%0%
+  name:
+    language: Idiomas
+    playerhead_on_death: Derruba a cabeça do jogador ao morrer
+  desc:
+    language1: Seleciona o idioma que o
+    language2: plugin vai mostrar
+    language3: as mensagens e outros textos.
+    playerhead_on_death1: A probabilidade em porcentagem
+    playerhead_on_death2: que o jogador irá derrubar sua
+    playerhead_on_death3: cabeça quando um jogador o
+    playerhead_on_death4: matar.
+prompt:
+  refine: Insira um §etermo de busca§7 para refinar sua busca.
+  search: Insira seu §etermo de busca§7.
+  canceled: Busca §ccancelada§7.
+gui:
+  title:
+    config: Configuração
+    settings: Definições
+  category:
+    lore1: %0%§7 cabeças
+    lore2: %0%§7 cabeça
+  head:
+    lore:
+      pack: Pacote: %0%
+      staff: Favorito da Staff
+      delete: Botão do meio para deletar
+  item:
+    arrow:
+      name: §e§lPágina %0%
+    left:
+      desc1: Clique aqui para ir %0% página para a esquerda.
+      desc2: Clique aqui para ir %0% páginas para a esquerda.
+    right:
+      desc1: Clique aqui para ir %0% página para a direita.
+      desc2: Clique aqui para ir %0% páginas para a direita.
+    back:
+      name: §e§lVoltar
+      desc: Clique aqui para ir para o menu anterior.
+    pageback:
+      name: §e§lVoltar para as categorias
+      desc: Clique aqui para ir para as categorias.
+    settings:
+      name: §c§lDefinições
+      desc: Clique aqui para abrir as definições.
+    config:
+      name: §5§lConfigurações
+      desc: Clique aqui para editar as configurações ingame.
+    update:
+      name: §b§lAtualizar plugin
+      desc: Clique aqui para automaticamente atualizar o plugin sem sair do jogo.
+    restoreconfig:
+      name: §b§lRestaurar configurações
+      desc: Clique aqui para restaurar as configurações originais.
+    searchnew:
+      name: §e§lNova busca
+      desc: Clique aqui para começar uma nova busca.
+    searchrefine:
+      name: §e§lRefinar busca
+      desc: Clique aqui para refinar sua busca atual.
+    favorites:
+      name: §6§lFavoritos
+      desc: Shift click em qualquer cabeça para adicona-la ao favoritos.
+    option:
+      left:
+        name: §e§lAnterior
+        desc: Clique aqui para selecionar a opção anterior.
+      right:
+        name: §e§lPróxima
+        desc: Clique aqui para selecionar a próxima opção.
+      plus:
+        name: §e§lMais
+        desc1: §7Clique aqui para adicionar
+        desc2: §7um ao valor atual.
+      minus:
+        name: §e§lMenos
+        desc1: §7Clique aqui para remover
+        desc2: §7um ao valor atual.
+      plusminus:
+        desc1: §b§oEsquerdo§7 click: §e%0%1
+        desc2: §b§oShift§7 + §b§oesquerdo§7 click: §e%0%5
+autoupdate:
+  begin: Checando novas atualizações...
+  result:
+    noupdate: Este plugin está atualizado! Você está rodando a §aultima§7 versão de §6%0%§7.
+    found1: Uma nova atualização foi §aencontrada§7. Versão: %0%
+    found2: A atualização vai ser instalada quando o servidor for
+    found3: §efechado §7ou §ereiniciado§7.
+  error:
+    noconnection: Não foi possível conectar ao servidor. Para atualizar é preciso estar conectado à §cinternet§7.
+    unknown: Um §cerro§7 ocorreu enquanto checava por novas atualizações!
+    alreadyfound1: Uma nova atualização §ejá foi§7 encontrada. Versão: %0%
+    alreadyfound2: A atualização vai ser instalada quando o servidor for §efechado §7ou §ereiniciado§7.
+    alreadysearching: §eAlguém§7 já está buscando por novas atualizações.
