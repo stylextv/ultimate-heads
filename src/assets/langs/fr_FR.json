@@ -27,17 +27,17 @@ command:
     added: La tête nommée §9%0%§7 a été §aajoutée§7.
   help:
     needsperm: §e*§7: Nécessite une autorisation
-    line1: /gs gui §8> §7Menu ouvert§e*
-    line2: /gs search §8> §7Recherche de tête§e*
-    line3: /gs give (player/all) (global/local)
+    line1: /uh gui §8> §7Menu ouvert§e*
+    line2: /uh search §8> §7Recherche de tête§e*
+    line3: /uh give (player/all) (global/local)
     line4: (head_id) §8> §7Donner une tête§e*
-    line5: /gs base64 §8> §7Obtenir la valeur base64§e*
-    line6: /gs url §8> §7Obtenir l'url de texture§e*
-    line7: /gs add (url) (name) (category) §8>
+    line5: /uh base64 §8> §7Obtenir la valeur base64§e*
+    line6: /uh url §8> §7Obtenir l'url de texture§e*
+    line7: /uh add (url) (name) (category) §8>
     line8: §7Ajout d'une tête§e*
-    line9: /gs update §8> §7Mise à jour du plugin§e*
-    line10: /gs help §8> §7Montrer de l'aide
-    line11: /gs info §8> §7Informations sur les plugins
+    line9: /uh update §8> §7Mise à jour du plugin§e*
+    line10: /uh help §8> §7Montrer de l'aide
+    line11: /uh info §8> §7Informations sur les plugins
   info:
     title:                   Informations
     line1: §7§oVous utilisez le plugin de têtes open

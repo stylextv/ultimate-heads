@@ -27,17 +27,17 @@ command:
     added: Der Kopf mit dem Namen §9%0%§7 wurde §ahinzugefügt§7.
   help:
     needsperm: §e*§7: Benötigt zusätzliche Erlaubnis
-    line1: /gs gui §8> §7Öffne Menü§e*
-    line2: /gs search §8> §7Suche nach Kopf§e*
-    line3: /gs give (player/all) (global/local)
+    line1: /uh gui §8> §7Öffne Menü§e*
+    line2: /uh search §8> §7Suche nach Kopf§e*
+    line3: /uh give (player/all) (global/local)
     line4: (head_id) §8> §7Vergebe Kopf§e*
-    line5: /gs base64 §8> §7Base64-Wert abrufen§e*
-    line6: /gs url §8> §7Textur-URL abrufen§e*
-    line7: /gs add (url) (name) (category) §8>
+    line5: /uh base64 §8> §7Base64-Wert abrufen§e*
+    line6: /uh url §8> §7Textur-URL abrufen§e*
+    line7: /uh add (url) (name) (category) §8>
     line8: §7Kopf hinzufügen§e*
-    line9: /gs update §8> §7Plugin aktualisieren§e*
-    line10: /gs help §8> §7Zeige Hilfe
-    line11: /gs info §8> §7Zeige Plugin-Informationen
+    line9: /uh update §8> §7Plugin aktualisieren§e*
+    line10: /uh help §8> §7Zeige Hilfe
+    line11: /uh info §8> §7Zeige Plugin-Informationen
   info:
     title:                   Informationen
     line1: §7§oSie verwenden das open-source Köpfe-

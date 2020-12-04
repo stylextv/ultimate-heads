@@ -27,17 +27,17 @@ command:
     added: 名称为 §9%0%§7 的头颅已被 §a添加§7。
   help:
     needsperm: §e*§7: 需要额外的权限来运行
-    line1: /gs gui §8> §7打开 gui 菜单§e*
-    line2: /gs search §8> §7搜索头颅§e*
-    line3: /gs give (玩家/all) (global/local)
+    line1: /uh gui §8> §7打开 gui 菜单§e*
+    line2: /uh search §8> §7搜索头颅§e*
+    line3: /uh give (player/all) (global/local)
     line4: (head_id) §8> §7给予头颅§e*
-    line5: /gs base64 §8> §7获取 base64 编码值§e*
-    line6: /gs url §8> §7获取材质链接(url)§e*
-    line7: /gs add (url) (名称) (category) §8>
+    line5: /uh base64 §8> §7获取 base64 编码值§e*
+    line6: /uh url §8> §7获取材质链接(url)§e*
+    line7: /uh add (url) (name) (category) §8>
     line8: §7添加头颅§e*
-    line9: /gs update §8> §7更新插件§e*
-    line10: /gs help §8> §7显示帮助
-    line11: /gs info §8> §7显示插件信息
+    line9: /uh update §8> §7更新插件§e*
+    line10: /uh help §8> §7显示帮助
+    line11: /uh info §8> §7显示插件信息
   info:
     title:                    信息
     line1: §7§o您正在使用开源的

@@ -27,17 +27,17 @@ command:
     added: The head named §9%0%§7 has been §aadded§7.
   help:
     needsperm: §e*§7: Needs extra permission to be executed
-    line1: /gs gui §8> §7Open gui§e*
-    line2: /gs search §8> §7Search for head§e*
-    line3: /gs give (player/all) (global/local)
+    line1: /uh gui §8> §7Open gui§e*
+    line2: /uh search §8> §7Search for head§e*
+    line3: /uh give (player/all) (global/local)
     line4: (head_id) §8> §7Give head§e*
-    line5: /gs base64 §8> §7Get base64 value§e*
-    line6: /gs url §8> §7Get texture url§e*
-    line7: /gs add (url) (name) (category) §8>
+    line5: /uh base64 §8> §7Get base64 value§e*
+    line6: /uh url §8> §7Get texture url§e*
+    line7: /uh add (url) (name) (category) §8>
     line8: §7Add head§e*
-    line9: /gs update §8> §7Update plugin§e*
-    line10: /gs help §8> §7Show help
-    line11: /gs info §8> §7Show plugin information
+    line9: /uh update §8> §7Update plugin§e*
+    line10: /uh help §8> §7Show help
+    line11: /uh info §8> §7Show plugin information
   info:
     title:                    Information
     line1: §7§oYou are using the open source heads

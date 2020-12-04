@@ -27,17 +27,17 @@ command:
     added: A cabeça chamada §9%0%§7 foi §aadicionada§7.
   help:
     needsperm: §e*§7: Precisa de permissão para usar
-    line1: /gs gui §8> §7Abre a GUI§e*
-    line2: /gs search §8> §7Procura pela cabeça§e*
-    line3: /gs give (player/all) (global/local)
+    line1: /uh gui §8> §7Abre a GUI§e*
+    line2: /uh search §8> §7Procura pela cabeça§e*
+    line3: /uh give (player/all) (global/local)
     line4: (head_id) §8> §7Da uma cabeça§e*
-    line5: /gs base64 §8> §7Pega o valor em Base64§e*
-    line6: /gs url §8> §7Pega a textura da URL§e*
-    line7: /gs add (url) (nome) (categoria) §8>
+    line5: /uh base64 §8> §7Pega o valor em Base64§e*
+    line6: /uh url §8> §7Pega a textura da URL§e*
+    line7: /uh add (url) (name) (category) §8>
     line8: §7Adiciona uma cabeça§e*
-    line9: /gs update §8> §7Atualiza o plugin§e*
-    line10: /gs help §8> §7Mostra os comandos
-    line11: /gs info §8> §7Mostra as informações do plugin
+    line9: /uh update §8> §7Atualiza o plugin§e*
+    line10: /uh help §8> §7Mostra os comandos
+    line11: /uh info §8> §7Mostra as informações do plugin
   info:
     title:                    Informações
     line1: §7§oVocê está usando um plugin de cabeças
