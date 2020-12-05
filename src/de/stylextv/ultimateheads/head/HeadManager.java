@@ -50,6 +50,7 @@ public class HeadManager {
 			
 		} else {
 			
+			Bukkit.getConsoleSender().sendMessage(Variables.PREFIX_CONSOLE+"Downloading heads... this may take a bit.");
 			JSONArray json = downloadHeads();
 			loadHeads(json, false);
 			saveHeadsToDisk(json);

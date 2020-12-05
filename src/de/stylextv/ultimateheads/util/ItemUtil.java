@@ -1,6 +1,10 @@
 package de.stylextv.ultimateheads.util;
 
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.lang.reflect.Field;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.Calendar;
@@ -13,6 +17,8 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.properties.Property;
 
@@ -262,10 +268,26 @@ public class ItemUtil {
 	public static String getHeadValue(Player p) {
         try {
             final Iterator<Property> iterator = ((GameProfile)GETPROFILE_METHOD.invoke(p)).getProperties().get("textures").iterator();
-            return iterator.hasNext() ? iterator.next().getValue() : null;
-        } catch (IllegalArgumentException | SecurityException ex) {
+            if(iterator.hasNext()) {
+            	return iterator.next().getValue();
+            } else {
+            	String uuid = getPlayerUUID(p.getName());
+            	return getHeadValue(uuid);
+            }
+        } catch (IllegalArgumentException | SecurityException | IOException ex) {
             return null;
         }
+	}
+	private static String getPlayerUUID(String name) throws IOException {
+		URL url = new URL("https://api.mojang.com/users/profiles/minecraft/" + name);
+		InputStreamReader reader = new InputStreamReader(url.openStream());
+		return new JsonParser().parse(reader).getAsJsonObject().get("id").getAsString();
+	}
+	private static String getHeadValue(String uuid) throws IOException {
+		URL url_1 = new URL("https://sessionserver.mojang.com/session/minecraft/profile/" + uuid + "?unsigned=false");
+        InputStreamReader reader_1 = new InputStreamReader(url_1.openStream());
+        JsonObject textureProperty = new JsonParser().parse(reader_1).getAsJsonObject().get("properties").getAsJsonArray().get(0).getAsJsonObject();
+        return textureProperty.get("value").getAsString();
 	}
 	
 }
