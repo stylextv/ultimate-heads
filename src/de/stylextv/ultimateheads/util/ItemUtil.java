@@ -3,7 +3,6 @@ package de.stylextv.ultimateheads.util;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.reflect.Field;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Base64;
@@ -272,6 +271,7 @@ public class ItemUtil {
             	return iterator.next().getValue();
             } else {
             	String uuid = getPlayerUUID(p.getName());
+            	if(uuid == null) return null;
             	return getHeadValue(uuid);
             }
         } catch (IllegalArgumentException | SecurityException | IOException ex) {
@@ -279,9 +279,13 @@ public class ItemUtil {
         }
 	}
 	private static String getPlayerUUID(String name) throws IOException {
-		URL url = new URL("https://api.mojang.com/users/profiles/minecraft/" + name);
-		InputStreamReader reader = new InputStreamReader(url.openStream());
-		return new JsonParser().parse(reader).getAsJsonObject().get("id").getAsString();
+		try {
+			URL url = new URL("https://api.mojang.com/users/profiles/minecraft/" + name);
+			InputStreamReader reader = new InputStreamReader(url.openStream());
+			return new JsonParser().parse(reader).getAsJsonObject().get("id").getAsString();
+		} catch(Exception ex) {
+			return null;
+		}
 	}
 	private static String getHeadValue(String uuid) throws IOException {
 		URL url_1 = new URL("https://sessionserver.mojang.com/session/minecraft/profile/" + uuid + "?unsigned=false");

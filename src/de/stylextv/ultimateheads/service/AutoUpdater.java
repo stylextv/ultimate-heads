@@ -100,7 +100,7 @@ public class AutoUpdater {
 						public void run() {
 							Bukkit.getConsoleSender().sendMessage(Variables.PREFIX_CONSOLE+"A new update has been §ainstalled§r. Version: "+pastF+" -> "+Variables.VERSION);
 							Bukkit.getConsoleSender().sendMessage(Variables.PREFIX_CONSOLE+"The changelog can be found here:");
-							Bukkit.getConsoleSender().sendMessage(Variables.PREFIX_CONSOLE+"https://www.spigotmc.org/resources/85797/updates");
+							Bukkit.getConsoleSender().sendMessage(Variables.PREFIX_CONSOLE+"https://www.spigotmc.org/resources/86374/updates");
 						}
 					}.runTask(plugin);
 				}

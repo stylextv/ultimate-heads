@@ -238,20 +238,27 @@ public class HeadManager {
 		}
 	}
 	public static void addPlayerToLocalHeads(Player p) {
-		String name = p.getName();
-		int id=removeLocalHead(name, true);
-		if(id==-1) id=HeadManager.getNextLocalId();
-		addLocalHead(new Head(id, name, ItemUtil.headValueToUrl(ItemUtil.getHeadValue(p), true), null, false, true, HeadManager.getOrAddCategory("Player Heads")));
+		String value = ItemUtil.getHeadValue(p);
+		if(value != null) {
+			String name = p.getName();
+			int id=removeLocalHead(name, true);
+			if(id==-1) id=HeadManager.getNextLocalId();
+			addLocalHead(new Head(id, name, ItemUtil.headValueToUrl(value, true), null, false, true, HeadManager.getOrAddCategory("Player Heads")));
+		}
 	}
 	public static Head getPlayerHead(Player p) {
 		String name = p.getName();
 		Optional<Head> optional = localHeads.stream().filter(h -> h.getCategory().getName().equalsIgnoreCase("Player Heads")&&h.getName().equals(name)).findFirst();
 		if(optional.isPresent()) return optional.get();
 		
-		int id=HeadManager.getNextLocalId();
-		Head h = new Head(id, name, ItemUtil.headValueToUrl(ItemUtil.getHeadValue(p), true), null, false, true, HeadManager.getOrAddCategory("Player Heads"));
-		addLocalHead(h);
-		return h;
+		String value = ItemUtil.getHeadValue(p);
+		if(value != null) {
+			int id=HeadManager.getNextLocalId();
+			Head h = new Head(id, name, ItemUtil.headValueToUrl(value, true), null, false, true, HeadManager.getOrAddCategory("Player Heads"));
+			addLocalHead(h);
+			return h;
+		}
+		return null;
 	}
 	
 	public static ArrayList<Category> getCategories() {
