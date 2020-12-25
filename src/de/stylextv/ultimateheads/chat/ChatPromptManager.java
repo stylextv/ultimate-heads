@@ -7,6 +7,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
 import de.stylextv.ultimateheads.main.Variables;
+import net.md_5.bungee.api.ChatColor;
 
 public class ChatPromptManager {
 	
@@ -22,7 +23,7 @@ public class ChatPromptManager {
 		Consumer<String> result = OPEN_PROMPTS.remove(p);
 		if(result != null) {
 			e.setCancelled(true);
-			result.accept(e.getMessage());
+			result.accept(ChatColor.stripColor(e.getMessage()));
 		}
 	}
 	
