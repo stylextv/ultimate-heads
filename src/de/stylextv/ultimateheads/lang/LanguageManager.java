@@ -7,7 +7,7 @@ import de.stylextv.ultimateheads.util.MathUtil;
 
 public class LanguageManager {
 	
-	private static final Language[] LANGUAGES = new Language[5];
+	private static final Language[] LANGUAGES = new Language[6];
 	
 	private static boolean inPluginRefresh = false;
 	
