@@ -23,7 +23,7 @@ A clear and concise description of what you expected to happen.
 If applicable, add screenshots to help explain your problem.
 
 **Plugin Version**
-What version of the plugin are you using? Type /gs info.
+What version of the plugin are you using? Type /uh info.
 
 **Server Version**
 Which Minecraft version and Spigot/Paper-Spigot version are you playing on?
